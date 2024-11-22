@@ -42,7 +42,7 @@ const testimonials = [
   <header class="bg-blue-600 text-white">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <h1 class="text-xl font-bold">Ngawi BookStore</h1>
-      <nav class="flex space-x-4">
+      <nav class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
         <RouterLink to="/" class="hover:underline">Home</RouterLink>
         <RouterLink to="/features" class="hover:underline">Features</RouterLink>
         <RouterLink to="/about" class="hover:underline">About</RouterLink>
@@ -75,38 +75,75 @@ const testimonials = [
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section class="py-20">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">Our Features</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div
-          v-for="feature in features"
-          :key="feature.title"
-          class="p-6 border rounded shadow hover:shadow-lg"
-        >
-          <div class="text-4xl mb-4 text-blue-600">{{ feature.icon }}</div>
-          <h3 class="text-xl font-semibold mb-2">{{ feature.title }}</h3>
-          <p class="text-gray-700">{{ feature.description }}</p>
+    <!-- Why Choose Us Section -->
+    <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-8">Why Choose Our Library?</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="p-6 border rounded shadow">
+          <h3 class="text-xl font-semibold mb-2">Extensive Collection</h3>
+          <p class="text-gray-700">
+            Access thousands of books across various genres and categories.
+          </p>
+        </div>
+        <div class="p-6 border rounded shadow">
+          <h3 class="text-xl font-semibold mb-2">User-Friendly Platform</h3>
+          <p class="text-gray-700">
+            Easily browse, search, and manage your favorite books.
+          </p>
+        </div>
+        <div class="p-6 border rounded shadow">
+          <h3 class="text-xl font-semibold mb-2">Flexible Membership</h3>
+          <p class="text-gray-700">
+            Choose from a variety of membership plans tailored to your needs.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Features Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <div v-if="!features.length" class="animate-pulse p-6 border rounded shadow">
+          <div class="h-4 bg-gray-300 rounded w-3/4 mb-4"></div>
+            <div class="h-3 bg-gray-300 rounded w-1/2"></div>
+        </div>
+        <div
+          v-else
+          v-for="feature in features"
+          :key="feature.title"
+          class="p-6 border rounded shadow hover:shadow-lg transform hover:scale-105 transition-transform duration-300"
+        >
+        <div class="text-4xl mb-4 text-blue-600">{{ feature.icon }}</div>
+        <h3 class="text-xl font-semibold mb-2">{{ feature.title }}</h3>
+        <p class="text-gray-700">{{ feature.description }}</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
   <!-- Testimonials Section -->
   <section class="bg-blue-50 py-20">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">What Our Users Say</h2>
+      <h2 class="text-3xl font-bold text-center mb-12">What Our Customers Say</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div
           v-for="testimonial in testimonials"
           :key="testimonial.name"
-          class="p-6 border rounded shadow bg-white"
+          class="p-6 border rounded shadow bg-white hover:bg-blue-50 transition-colors duration-300"
         >
           <div class="flex items-center mb-4">
             <img
               :src="testimonial.image"
-              alt="User Image"
+              alt="`Photo of ${testimonial.name}`"
               class="w-12 h-12 rounded-full mr-4"
             />
             <div>
@@ -121,20 +158,44 @@ const testimonials = [
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6">
-    <div class="container mx-auto px-4 text-center">
-      <p>&copy; 2024 LandingPage. All rights reserved.</p>
-      <nav class="flex justify-center space-x-4 mt-4">
-        <RouterLink to="/" class="hover:underline">Home</RouterLink>
-        <RouterLink to="/privacy" class="hover:underline"
-          >Privacy Policy</RouterLink
-        >
-        <RouterLink to="/terms" class="hover:underline"
-          >Terms of Service</RouterLink
-        >
-      </nav>
+<footer class="bg-gray-800 text-white py-10">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <div>
+        <h4 class="text-lg font-bold mb-2">About Us</h4>
+        <p class="text-gray-400">
+          We are committed to providing the best library experience.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-lg font-bold mb-2">Quick Links</h4>
+        <ul>
+          <li>
+            <RouterLink to="/privacy" class="hover:underline">Privacy Policy</RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/terms" class="hover:underline">Terms of Service</RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/faq" class="hover:underline">FAQ</RouterLink>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-lg font-bold mb-2">Follow Us</h4>
+        <div class="flex space-x-4">
+          <a href="#" class="hover:text-blue-400"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="hover:text-blue-400"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
     </div>
-  </footer>
+    <div class="text-center mt-8 text-gray-400">
+      &copy; 2024 Ngawi BookStore. All rights reserved.
+    </div>
+  </div>
+</footer>
+
 </template>
 
 <style scoped>
