@@ -20,16 +20,10 @@
         <p>Pengarang: {{ book.author }}</p>
         <p>Kategori: {{ book.category }}</p>
         <p>Status: {{ book.available ? "Tersedia" : "Dipinjam" }}</p>
-        <router-link
-          :to="`/books/${book.id}`"
-          class="text-blue-500 underline"
-        >
+        <router-link :to="`/books/${book.id}`" class="text-blue-500 underline">
           Detail
         </router-link>
-        <button
-          @click="handleDelete(book.id)"
-          class="text-red-500 ml-4"
-        >
+        <button @click="handleDelete(book.id)" class="text-red-500 ml-4">
           Hapus
         </button>
       </div>
