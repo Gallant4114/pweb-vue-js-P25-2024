@@ -39,8 +39,8 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { useBooksStore } from "@/store/books";
-import LoadingSpinner from "@/components/LoadingSpinner.vue";
+import { useBooksStore } from "../store/books";
+import LoadingSpinner from "../components/LoadingSpinner.vue";
 
 export default defineComponent({
   components: { LoadingSpinner },
