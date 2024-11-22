@@ -41,7 +41,7 @@ const testimonials = [
   <!-- Header -->
   <header class="bg-blue-600 text-white">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold">LandingPage</h1>
+      <h1 class="text-xl font-bold">Ngawi BookStore</h1>
       <nav class="flex space-x-4">
         <RouterLink to="/" class="hover:underline">Home</RouterLink>
         <RouterLink to="/features" class="hover:underline">Features</RouterLink>
