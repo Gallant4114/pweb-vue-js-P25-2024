@@ -29,23 +29,25 @@ import { useBooksStore } from "@/store/books";
 
 export default defineComponent({
   setup() {
-    const { addBook } = useBooksStore();
+    const booksStore = useBooksStore();
     const title = ref("");
     const author = ref("");
     const category = ref("");
 
-    const addBookHandler = () => {
-      addBook({
+    const addBook = () => {
+      booksStore.addBook({
+        id: Date.now().toString(),
         title: title.value,
         author: author.value,
         category: category.value,
+        available: true,
       });
       title.value = "";
       author.value = "";
       category.value = "";
     };
 
-    return { title, author, category, addBookHandler };
+    return { title, author, category, addBook };
   },
 });
 </script>
