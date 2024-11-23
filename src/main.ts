@@ -1,4 +1,4 @@
-import "./assets/main.css"; // Pastikan file ini ada dan berisi konfigurasi Tailwind
+import "./assets/main.css"; 
 
 import { createApp } from "vue";
 import App from "./App.vue";

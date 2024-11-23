@@ -14,8 +14,6 @@ const features = [
   },
 ];
 
-
-
 const testimonials = [
   {
     name: "Mas Narji",
@@ -67,10 +65,10 @@ const testimonials = [
         </p>
 
       <!-- Buttons -->
-        <div class="flex justify-center space-x-4">
+        <div class="flex justify-center gap-10 space-x-4">
           <RouterLink
             to="/signup"
-            class="bg-blue-600 text-white py-3 px-8 rounded-full shadow-lg transform transition-all duration-500 ease-in-out hover:bg-blue-700 hover:scale-110 hover:ring-4 hover:ring-blue-500 hover:ring-opacity-50 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50"
+            class="bg-blue-600 text-white py-3 px-8 rounded-full shadow-lg transform transition-all duration-500 ease-in-out hover:bg-blue-800 hover:scale-110 hover:ring-4 hover:ring-blue-500 hover:ring-opacity-50 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50"
           >
             Get Started
           </RouterLink>
@@ -90,7 +88,32 @@ const testimonials = [
           alt="Books Illustration"
           class="mx-auto rounded-lg shadow-lg"
         />
+      </div> -->
+  </section>
+
+  <!-- About Us Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8">
+      <!-- Image on the left -->
+      <div class="flex-1">
+        <img
+          src="/img/pic2.png"
+          alt="About Us"
+          class="w-full h-auto rounded-2xl shadow-lg"
+        />
       </div>
+
+      <!-- Text on the right -->
+      <div class="flex-1 text-center md:text-left">
+        <h2 class="text-3xl font-bold mb-6">About Us</h2>
+        <p class="text-gray-700 text-lg mb-4">
+          At Ngawi BookStore, we are passionate about providing an extensive library experience. Our platform offers a variety of books in different genres, accessible at your fingertips. We aim to create an inclusive space for book lovers of all ages to enjoy and expand their knowledge.
+        </p>
+        <p class="text-gray-600">
+          Whether you're looking to explore new topics or simply enjoy a good read, we are committed to ensuring that you have the best library experience possible.
+        </p>
+      </div>
+    </div>
   </section>
 
     <!-- Why Choose Us Section -->
@@ -98,19 +121,19 @@ const testimonials = [
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold mb-8">Why Choose Our Library?</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="p-6 border rounded shadow">
+        <div class="p-6 border rounded-2xl shadow">
           <h3 class="text-xl font-semibold mb-2">Extensive Collection</h3>
           <p class="text-gray-700">
             Access thousands of books across various genres and categories.
           </p>
         </div>
-        <div class="p-6 border rounded shadow">
+        <div class="p-6 border rounded-2xl shadow">
           <h3 class="text-xl font-semibold mb-2">User-Friendly Platform</h3>
           <p class="text-gray-700">
             Easily browse, search, and manage your favorite books.
           </p>
         </div>
-        <div class="p-6 border rounded shadow">
+        <div class="p-6 border rounded-2xl shadow">
           <h3 class="text-xl font-semibold mb-2">Flexible Membership</h3>
           <p class="text-gray-700">
             Choose from a variety of membership plans tailored to your needs.
@@ -132,24 +155,24 @@ const testimonials = [
       </div>
 
       <!-- Book List Feature Card -->
-      <router-link
+      <RouterLink
         to="/list"
-        class="p-6 border rounded shadow hover:shadow-lg transform hover:scale-105 transition-transform duration-300"
+        class="p-6 border rounded-2xl shadow hover:shadow-lg transform hover:scale-105 transition-transform duration-300"
       >
-        <div class="text-4xl mb-4 text-blue-600">📚</div> <!-- Icon for Book List -->
+        <div class="text-4xl mb-4 text-blue-600">📚</div>
         <h3 class="text-xl font-semibold mb-2">Book List</h3>
         <p class="text-gray-700">Lihat daftar buku yang tersedia di perpustakaan kami.</p>
-      </router-link>
+      </RouterLink>
 
       <!-- Book Management Feature Card -->
-      <router-link
+      <RouterLink
         to="/add"
-        class="p-6 border rounded shadow hover:shadow-lg transform hover:scale-105 transition-transform duration-300"
+        class="p-6 border rounded-2xl shadow hover:shadow-lg transform hover:scale-105 transition-transform duration-300"
       >
-        <div class="text-4xl mb-4 text-blue-600">🛠️</div> <!-- Icon for Book Management -->
+        <div class="text-4xl mb-4 text-blue-600">🛠️</div>
         <h3 class="text-xl font-semibold mb-2">Book Management</h3>
         <p class="text-gray-700">Kelola buku dengan menambah dan menghapus buku.</p>
-      </router-link>
+      </RouterLink>
 
     </div>
   </div>
@@ -182,7 +205,6 @@ const testimonials = [
     </div>
   </section>
 
-  <router-view />
   <!-- Footer -->
 <footer class="bg-gray-800 text-white py-10">
   <div class="container mx-auto px-4">
