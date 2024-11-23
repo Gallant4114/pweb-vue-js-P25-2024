@@ -1,6 +1,11 @@
 <template>
   <div class="container mx-auto mt-8">
-    <h1 class="text-3xl font-bold mb-6">Daftar Buku</h1>
+    <!--Header-->
+    <div class="text-center mb-8">
+      <h1 class="text-3xl font-bold mb-6">Daftar Buku</h1>
+      <p class="text-lg text-gray-600 mt-2">Temukan berbagai buku yang tersedia di Ngawi BookStore. Lihat koleksi buku eksklusif dari kami!.</p>
+    </div>
+
     <BookList />
   </div>
 </template>

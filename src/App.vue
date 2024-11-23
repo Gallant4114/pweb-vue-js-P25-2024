@@ -120,30 +120,40 @@ const testimonials = [
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section class="py-20">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">Our Features</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Features Section -->
+<section class="py-20">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">Our Features</h2>
+    <div class="flex gap-8 justify-center items-center">
 
-        <div v-if="!features.length" class="animate-pulse p-6 border rounded shadow">
-          <div class="h-4 bg-gray-300 rounded w-3/4 mb-4"></div>
-            <div class="h-3 bg-gray-300 rounded w-1/2"></div>
-        </div>
-        <div
-          v-else
-          v-for="feature in features"
-          :key="feature.title"
-          class="p-6 border rounded shadow hover:shadow-lg transform hover:scale-105 transition-transform duration-300"
-        >
-        <div class="text-4xl mb-4 text-blue-600">{{ feature.icon }}</div>
-        <h3 class="text-xl font-semibold mb-2">{{ feature.title }}</h3>
-        <p class="text-gray-700">{{ feature.description }}</p>
-        </div>
-
+      <div v-if="!features.length" class="animate-pulse p-6 border rounded shadow">
+        <div class="h-4 bg-gray-300 rounded w-3/4 mb-4"></div>
+        <div class="h-3 bg-gray-300 rounded w-1/2"></div>
       </div>
+
+      <!-- Book List Feature Card -->
+      <router-link
+        to="/list"
+        class="p-6 border rounded shadow hover:shadow-lg transform hover:scale-105 transition-transform duration-300"
+      >
+        <div class="text-4xl mb-4 text-blue-600">📚</div> <!-- Icon for Book List -->
+        <h3 class="text-xl font-semibold mb-2">Book List</h3>
+        <p class="text-gray-700">Lihat daftar buku yang tersedia di perpustakaan kami.</p>
+      </router-link>
+
+      <!-- Book Management Feature Card -->
+      <router-link
+        to="/add"
+        class="p-6 border rounded shadow hover:shadow-lg transform hover:scale-105 transition-transform duration-300"
+      >
+        <div class="text-4xl mb-4 text-blue-600">🛠️</div> <!-- Icon for Book Management -->
+        <h3 class="text-xl font-semibold mb-2">Book Management</h3>
+        <p class="text-gray-700">Kelola buku dengan menambah dan menghapus buku.</p>
+      </router-link>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Testimonials Section -->
   <section class="bg-blue-50 py-20">
@@ -172,6 +182,7 @@ const testimonials = [
     </div>
   </section>
 
+  <router-view />
   <!-- Footer -->
 <footer class="bg-gray-800 text-white py-10">
   <div class="container mx-auto px-4">

@@ -5,6 +5,7 @@ import AddBookPage from "../views/AddBookPage.vue";
 
 const routes = [
   { path: "/", component: BookListPage },
+  { path: "/list", component: BookListPage },
   { path: "/books/:id", component: BookDetailPage },
   { path: "/add", component: AddBookPage },
 ];
