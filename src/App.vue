@@ -3,32 +3,29 @@ import { RouterLink } from "vue-router";
 
 const features = [
   {
-    title: "Feature One",
-    description: "Description of feature one.",
-    icon: "🔥",
+    title: "Book List",
+    description: "Lihat daftar buku lengkap dan akses detail setiap buku yang ada di perpustakaan.",
+    icon: "📚",
   },
   {
-    title: "Feature Two",
-    description: "Description of feature two.",
-    icon: "🚀",
-  },
-  {
-    title: "Feature Three",
-    description: "Description of feature three.",
-    icon: "💎",
+    title: "Book Management",
+    description: "Kelola buku dengan mudah, tambahkan atau hapus buku dari daftar perpustakaan kami.",
+    icon: "⚙️",
   },
 ];
 
+
+
 const testimonials = [
   {
-    name: "John Doe",
+    name: "Mas Narji",
     role: "CEO, Example Co.",
     testimonial:
       "This is an amazing platform! Highly recommend it to everyone.",
     image: "https://via.placeholder.com/50",
   },
   {
-    name: "Jane Smith",
+    name: "Mas Amba",
     role: "CTO, Another Co.",
     testimonial:
       "The features are incredibly well-designed. Great experience overall.",
@@ -52,27 +49,48 @@ const testimonials = [
   </header>
 
   <!-- Hero Section -->
-  <section class="bg-gray-100 py-20">
+  <section class="relative bg-gray-100 py-20 overflow-hidden">
+    <!-- Background Decorative Shapes -->
+    <div class="absolute top-0 left-0 w-96 h-96 bg-blue-300 rounded-full opacity-30 -z-10 blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-72 h-72 bg-yellow-300 rounded-full opacity-30 -z-10 blur-3xl"></div>
+
     <div class="container mx-auto px-4 text-center">
-      <h1 class="text-4xl font-bold mb-4">Welcome to Our Platform</h1>
-      <p class="text-gray-700 mb-6">
-        Discover amazing features and experience unparalleled service.
-      </p>
-      <div class="flex justify-center space-x-4">
-        <RouterLink
-          to="/signup"
-          class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
+      <!-- Main Title -->
+        <h1
+          class="text-4xl md:text-6xl font-extrabold mb-4 text-blue-700 leading-tight"
         >
-          Get Started
-        </RouterLink>
-        <RouterLink
-          to="/learn-more"
-          class="bg-gray-300 py-2 px-4 rounded hover:bg-gray-400"
-        >
-          Learn More
-        </RouterLink>
-      </div>
+          Discover the World of Knowledge
+        </h1>
+        <!-- Subtitle -->
+        <p class="text-gray-700 mb-6 text-lg md:text-xl">
+          Explore thousands of books, curated for every reader.
+        </p>
+
+      <!-- Buttons -->
+        <div class="flex justify-center space-x-4">
+          <RouterLink
+            to="/signup"
+            class="bg-blue-600 text-white py-3 px-8 rounded-full shadow-lg transform transition-all duration-500 ease-in-out hover:bg-blue-700 hover:scale-110 hover:ring-4 hover:ring-blue-500 hover:ring-opacity-50 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50"
+          >
+            Get Started
+          </RouterLink>
+          <RouterLink
+            to="/learn-more"
+            class="bg-gray-300 text-gray-800 py-3 px-8 rounded-full shadow-lg transform transition-all duration-500 ease-in-out hover:bg-gray-400 hover:scale-110 hover:ring-4 hover:ring-gray-500 hover:ring-opacity-50 focus:outline-none focus:ring-4 focus:ring-gray-500 focus:ring-opacity-50"
+          >
+            Learn More
+          </RouterLink>
+        </div>
     </div>
+
+      <!-- Illustration -->
+      <div class="mt-10">
+        <img
+          src="https://via.placeholder.com/500x300"
+          alt="Books Illustration"
+          class="mx-auto rounded-lg shadow-lg"
+        />
+      </div>
   </section>
 
     <!-- Why Choose Us Section -->
@@ -126,9 +144,6 @@ const testimonials = [
       </div>
     </div>
   </section>
-
-
-
 
   <!-- Testimonials Section -->
   <section class="bg-blue-50 py-20">

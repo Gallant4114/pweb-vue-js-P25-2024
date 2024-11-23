@@ -4,9 +4,9 @@
     <p>Pengarang: {{ book?.author }}</p>
     <p>Kategori: {{ book?.category }}</p>
     <p>Status: {{ book?.available ? "Tersedia" : "Dipinjam" }}</p>
-    <router-link to="/" class="text-blue-500 underline"
-      >Kembali ke Daftar</router-link
-    >
+    <router-link to="/" class="text-blue-500 underline">
+      Kembali ke Daftar
+    </router-link>
   </div>
 </template>
 
@@ -18,8 +18,8 @@ import { useBooksStore } from "@/store/books";
 export default defineComponent({
   setup() {
     const route = useRoute();
-    const { getBookById } = useBooksStore();
-    const book = getBookById(route.params.id as string);
+    const booksStore = useBooksStore();
+    const book = booksStore.getBookById(route.params.id as string);
     return { book };
   },
 });
