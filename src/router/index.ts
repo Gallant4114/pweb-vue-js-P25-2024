@@ -1,16 +1,34 @@
 import { createRouter, createWebHistory } from "vue-router";
-import BookListPage from "../views/BookListPage.vue";
-import BookDetailPage from "../views/BookDetailPage.vue";
-import AddBookPage from "../views/AddBookPage.vue";
+import HomeView from "../views/HomeView.vue";
+import AddBookView from "@/views/AddBookView.vue";
+import DetailBookView from "@/views/DetailBookView.vue";
 
-const routes = [
-  { path: "/", component: BookListPage },
-  { path: "/list", component: BookListPage },
-  { path: "/books/:id", component: BookDetailPage },
-  { path: "/add", component: AddBookPage },
-];
-
-export default createRouter({
-  history: createWebHistory(),
-  routes,
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
+    {
+      path: "/",
+      name: "home",
+      component: HomeView,
+    },
+    {
+      path: "/add-book",
+      name: "add-book",
+      component: AddBookView,
+    },
+    {
+      path: "/detail/:id",
+      name: "book detail",
+      component: DetailBookView,
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      name: "PageNotFound",
+      redirect(_) {
+        return { path: "/" };
+      },
+    },
+  ],
 });
+
+export default router;
