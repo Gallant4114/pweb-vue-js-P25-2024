@@ -1,3 +1,5 @@
+//DetailBookView
+
 <script lang="ts">
 import { defineComponent } from "vue";
 
@@ -32,7 +34,7 @@ export default defineComponent({
   async mounted() {
     try {
       const response = await fetch(
-        `http://localhost:3000/book/${this.$route.params.id}`
+        `http://localhost:4000/book/${this.$route.params.id}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch book data");
@@ -47,7 +49,7 @@ export default defineComponent({
   methods: {
     async deleteBook() {
       const response = await fetch(
-        `http://localhost:3000/book/${this.$route.params.id}`,
+        `http://localhost:4000/book/${this.$route.params.id}`,
         {
           method: "DELETE",
         }
