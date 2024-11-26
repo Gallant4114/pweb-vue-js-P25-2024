@@ -160,7 +160,7 @@ export default defineComponent({
           </div>
           </div>
     </div>
-  </section>  
+  </section>
 
   <!-- Footer -->
   <footer class="bg-gray-800 text-white py-10">
