@@ -71,160 +71,212 @@ export default defineComponent({
 </script>
 
 <template>
-  <main class="mt-10 mx-8 pb-24">
-    <h1 class="font-bold text-3xl text-center mb-2">Add New Book</h1>
+  <main class="mt-16 mx-auto pb-24 max-w-4xl">
+    <h1 class="font-extrabold text-4xl text-center text-gray-800 mb-8">
+      📚 Add a New Book
+    </h1>
     <form
       @submit.prevent="addBook"
-      class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md"
+      class="max-w-3xl mx-auto bg-gradient-to-r from-blue-100 to-blue-50 p-10 rounded-lg shadow-2xl"
     >
-      <div class="mb-4">
-        <label for="title" class="block text-gray-700 font-bold mb-2"
-          >Title</label
-        >
+      <!-- Title -->
+      <div class="mb-6">
+        <label for="title" class="block text-lg font-bold text-gray-700 mb-2">
+          Title
+        </label>
         <input
           v-model="title"
           id="title"
           type="text"
           placeholder="Tintin di Tibet"
-          class="w-full px-3 py-2 border rounded-lg"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
           required
         />
       </div>
-      <div class="mb-4">
-        <label for="author" class="block text-gray-700 font-bold mb-2"
-          >Author</label
-        >
+
+      <!-- Author -->
+      <div class="mb-6">
+        <label for="author" class="block text-lg font-bold text-gray-700 mb-2">
+          Author
+        </label>
         <input
           v-model="author"
           id="author"
           type="text"
           placeholder="Hergé"
-          class="w-full px-3 py-2 border rounded-lg"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
           required
         />
       </div>
-      <div class="mb-4">
-        <label for="publishedDate" class="block text-gray-700 font-bold mb-2"
-          >Published Date</label
+
+      <!-- Published Date -->
+      <div class="mb-6">
+        <label
+          for="publishedDate"
+          class="block text-lg font-bold text-gray-700 mb-2"
         >
+          Published Date
+        </label>
         <input
           v-model="publishedDate"
           id="publishedDate"
           type="date"
-          class="w-full px-3 py-2 border rounded-lg"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
           required
         />
       </div>
-      <div class="mb-4">
-        <label for="publisher" class="block text-gray-700 font-bold mb-2"
-          >Publisher</label
+
+      <!-- Publisher -->
+      <div class="mb-6">
+        <label
+          for="publisher"
+          class="block text-lg font-bold text-gray-700 mb-2"
         >
+          Publisher
+        </label>
         <input
           v-model="publisher"
           id="publisher"
           type="text"
           placeholder="Gramedia"
-          class="w-full px-3 py-2 border rounded-lg"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
           required
         />
       </div>
-      <div class="mb-4">
-        <label for="description" class="block text-gray-700 font-bold mb-2"
-          >Description</label
+
+      <!-- Description -->
+      <div class="mb-6">
+        <label
+          for="description"
+          class="block text-lg font-bold text-gray-700 mb-2"
         >
+          Description
+        </label>
         <textarea
           v-model="description"
           id="description"
           placeholder="Kisah petualangan Tintin di Tibet"
-          class="w-full px-3 py-2 border rounded-lg"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300 resize-none"
           required
         ></textarea>
       </div>
-      <div class="mb-4">
-        <label for="coverImage" class="block text-gray-700 font-bold mb-2"
-          >Cover Image URL</label
+
+      <!-- Cover Image -->
+      <div class="mb-6">
+        <label
+          for="coverImage"
+          class="block text-lg font-bold text-gray-700 mb-2"
         >
+          Cover Image URL
+        </label>
         <input
           v-model="coverImage"
           id="coverImage"
           type="url"
           placeholder="https://placehold.co/300x200"
-          class="w-full px-3 py-2 border rounded-lg"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
           required
         />
       </div>
-      <div class="mb-4">
-        <label for="ratingAverage" class="block text-gray-700 font-bold mb-2"
-          >Rating Average</label
-        >
-        <input
-          v-model="ratingAverage"
-          id="ratingAverage"
-          type="number"
-          step="0.1"
-          class="w-full px-3 py-2 border rounded-lg"
-          required
-        />
+
+      <!-- Rating Average -->
+      <div class="grid grid-cols-2 gap-6">
+        <div class="mb-6">
+          <label
+            for="ratingAverage"
+            class="block text-lg font-bold text-gray-700 mb-2"
+          >
+            Rating Average
+          </label>
+          <input
+            v-model="ratingAverage"
+            id="ratingAverage"
+            type="number"
+            step="0.1"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
+            required
+          />
+        </div>
+
+        <!-- Rating Count -->
+        <div class="mb-6">
+          <label
+            for="ratingCount"
+            class="block text-lg font-bold text-gray-700 mb-2"
+          >
+            Rating Count
+          </label>
+          <input
+            v-model="ratingCount"
+            id="ratingCount"
+            type="number"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
+            required
+          />
+        </div>
       </div>
-      <div class="mb-4">
-        <label for="ratingCount" class="block text-gray-700 font-bold mb-2"
-          >Rating Count</label
-        >
-        <input
-          v-model="ratingCount"
-          id="ratingCount"
-          type="number"
-          class="w-full px-3 py-2 border rounded-lg"
-          required
-        />
-      </div>
-      <div class="mb-4">
-        <label for="tags" class="block text-gray-700 font-bold mb-2"
-          >Tags (comma separated)</label
-        >
+
+      <!-- Tags -->
+      <div class="mb-6">
+        <label for="tags" class="block text-lg font-bold text-gray-700 mb-2">
+          Tags (comma separated)
+        </label>
         <input
           v-model="tags"
           id="tags"
           type="text"
           placeholder="Adventure, Fiction, Mystery"
-          class="w-full px-3 py-2 border rounded-lg"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
           required
         />
       </div>
-      <div class="mb-4">
-        <label for="initialQty" class="block text-gray-700 font-bold mb-2"
-          >Initial Quantity</label
-        >
-        <input
-          v-model="initialQty"
-          id="initialQty"
-          type="number"
-          class="w-full px-3 py-2 border rounded-lg"
-          required
-        />
+
+      <!-- Initial Quantity -->
+      <div class="grid grid-cols-2 gap-6">
+        <div class="mb-6">
+          <label
+            for="initialQty"
+            class="block text-lg font-bold text-gray-700 mb-2"
+          >
+            Initial Quantity
+          </label>
+          <input
+            v-model="initialQty"
+            id="initialQty"
+            type="number"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
+            required
+          />
+        </div>
+
+        <!-- Quantity -->
+        <div class="mb-6">
+          <label for="qty" class="block text-lg font-bold text-gray-700 mb-2">
+            Quantity
+          </label>
+          <input
+            v-model="qty"
+            id="qty"
+            type="number"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
+            required
+          />
+        </div>
       </div>
-      <div class="mb-4">
-        <label for="qty" class="block text-gray-700 font-bold mb-2"
-          >Quantity</label
-        >
-        <input
-          v-model="qty"
-          id="qty"
-          type="number"
-          class="w-full px-3 py-2 border rounded-lg"
-          required
-        />
-      </div>
+
+      <!-- Error Message -->
       <h5
-        class="font-bold text-xl text-red-400 mb-8 text-center"
+        class="font-semibold text-xl text-red-500 mb-8 text-center"
         v-show="error"
       >
         {{ errorMsg }}
       </h5>
+
+      <!-- Submit Button -->
       <div class="flex justify-center">
         <button
           type="submit"
-          class="px-4 text-white py-2 bg-blue-400 font-semibold rounded-xl"
+          class="px-6 py-3 text-white font-semibold bg-blue-500 rounded-lg shadow-lg hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
         >
           Add Book
         </button>
