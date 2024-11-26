@@ -56,7 +56,7 @@ export default defineComponent({
 
 <template>
   <!-- Header dengan Navbar -->
-  <nav class="bg-blue-600 text-white p-4">
+  <nav class="sticky top-0 bg-cyan-600 text-white p-4">
     <div class="container mx-auto flex justify-between items-center">
       <div class="flex items-center space-x-4">
         <h3 class="text-xl font-bold">Ngawi BookStore</h3>
@@ -90,22 +90,26 @@ export default defineComponent({
     </div>
   </nav>
 
-    <!--Hero section-->>
-    <section class="relative bg-gray-100 py-20 overflow-hidden">
+  <!--Hero section-->>
+  <section class="relative bg-gray-100 py-20 overflow-hidden">
     <!-- Background Decorative Shapes -->
-    <div class="absolute top-0 left-0 w-96 h-96 bg-blue-300 rounded-full opacity-30 -z-10 blur-3xl"></div>
-    <div class="absolute bottom-0 right-0 w-72 h-72 bg-yellow-300 rounded-full opacity-30 -z-10 blur-3xl"></div>
+    <div
+      class="absolute top-0 left-0 w-96 h-96 bg-blue-300 rounded-full opacity-30 -z-10 blur-3xl"
+    ></div>
+    <div
+      class="absolute bottom-0 right-0 w-72 h-72 bg-yellow-300 rounded-full opacity-30 -z-10 blur-3xl"
+    ></div>
     <div class="container mx-auto px-4 text-center">
       <!-- Main Title -->
-        <h1
-          class="text-4xl md:text-6xl font-extrabold mb-4 text-blue-700 leading-tight"
-        >
-          Discover the World of Knowledge
-        </h1>
-        <!-- Subtitle -->
-        <p class="text-gray-700 mb-6 text-lg md:text-xl">
-          Explore thousands of books, curated for every reader.
-        </p>
+      <h1
+        class="text-4xl md:text-6xl font-extrabold mb-4 text-blue-700 leading-tight"
+      >
+        Discover the World of Knowledge
+      </h1>
+      <!-- Subtitle -->
+      <p class="text-gray-700 mb-6 text-lg md:text-xl">
+        Explore thousands of books, curated for every reader.
+      </p>
       <!-- Buttons 
         <div class="flex justify-center gap-10 space-x-4">
           <RouterLink
@@ -122,7 +126,7 @@ export default defineComponent({
           </RouterLink>
         </div> -->
     </div>
-      <!-- Illustration
+    <!-- Illustration
       <div class="mt-10">
         <img
           src="https://via.placeholder.com/500x300"
@@ -134,7 +138,9 @@ export default defineComponent({
 
   <!--About Us Section-->
   <section class="py-20 bg-gray-50">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8">
+    <div
+      class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8"
+    >
       <!-- Gambar -->
       <div class="flex-1">
         <img
@@ -147,10 +153,16 @@ export default defineComponent({
       <div class="flex-1 text-center md:text-left">
         <h2 class="text-3xl font-bold mb-6">About Us</h2>
         <p class="text-gray-700 text-lg mb-4">
-          At Ngawi BookStore, we are passionate about providing an extensive library experience. Our platform offers a variety of books in different genres, accessible at your fingertips. We aim to create an inclusive space for book lovers of all ages to enjoy and expand their knowledge.
+          At Ngawi BookStore, we are passionate about providing an extensive
+          library experience. Our platform offers a variety of books in
+          different genres, accessible at your fingertips. We aim to create an
+          inclusive space for book lovers of all ages to enjoy and expand their
+          knowledge.
         </p>
         <p class="text-gray-600">
-          Whether you're looking to explore new topics or simply enjoy a good read, we are committed to ensuring that you have the best library experience possible.
+          Whether you're looking to explore new topics or simply enjoy a good
+          read, we are committed to ensuring that you have the best library
+          experience possible.
         </p>
       </div>
     </div>
