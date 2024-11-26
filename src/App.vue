@@ -55,16 +55,19 @@ export default defineComponent({
 </script>
 
 <template>
-  <!-- Header dengan Navbar -->
-  <nav class="sticky top-0 bg-cyan-600 text-white p-4">
-    <div class="container mx-auto flex justify-between items-center">
+  <!--Navbar berkelas-->
+  <nav class="sticky top-0 bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <!-- Logo -->
       <div class="flex items-center space-x-4">
-        <h3 class="text-xl font-bold">Ngawi BookStore</h3>
+        <h1 class="text-2xl font-bold tracking-wide">Ngawi BookStore</h1>
       </div>
+
+      <!-- Mobile Menu Button -->
       <div class="md:hidden">
         <button @click="toggleMenu" class="text-white focus:outline-none">
           <svg
-            class="w-6 h-6"
+            class="w-8 h-8"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -79,18 +82,97 @@ export default defineComponent({
           </svg>
         </button>
       </div>
+
+      <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center space-x-4">
-        <RouterLink to="/" class="hover:underline">Home</RouterLink>
-        <RouterLink to="/add-book" class="hover:underline"
-          >Add New Book</RouterLink
+        <RouterLink
+          to="/"
+          class="group relative px-4 py-2 rounded-full font-medium overflow-hidden"
         >
-        <RouterLink to="/about" class="hover:underline">About</RouterLink>
-        <RouterLink to="/contact" class="hover:underline">Contact</RouterLink>
+          <span
+            class="absolute inset-0 bg-blue-800 scale-x-0 group-hover:scale-x-100 transform origin-left transition-transform duration-300 ease-out"
+          ></span>
+          <span
+            class="relative z-10 text-white group-hover:text-white transition-colors duration-300 ease-out"
+          >
+            Home
+          </span>
+        </RouterLink>
+        <RouterLink
+          to="/add-book"
+          class="group relative px-4 py-2 rounded-full font-medium overflow-hidden"
+        >
+          <span
+            class="absolute inset-0 bg-blue-800 scale-x-0 group-hover:scale-x-100 transform origin-left transition-transform duration-300 ease-out"
+          ></span>
+          <span
+            class="relative z-10 text-white group-hover:text-white transition-colors duration-300 ease-out"
+          >
+            Add New Book
+          </span>
+        </RouterLink>
+        <RouterLink
+          to="/about"
+          class="group relative px-4 py-2 rounded-full font-medium overflow-hidden"
+        >
+          <span
+            class="absolute inset-0 bg-blue-800 scale-x-0 group-hover:scale-x-100 transform origin-left transition-transform duration-300 ease-out"
+          ></span>
+          <span
+            class="relative z-10 text-white group-hover:text-white transition-colors duration-300 ease-out"
+          >
+            About
+          </span>
+        </RouterLink>
+        <RouterLink
+          to="/contact"
+          class="group relative px-4 py-2 rounded-full font-medium overflow-hidden"
+        >
+          <span
+            class="absolute inset-0 bg-blue-800 scale-x-0 group-hover:scale-x-100 transform origin-left transition-transform duration-300 ease-out"
+          ></span>
+          <span
+            class="relative z-10 text-white group-hover:text-white transition-colors duration-300 ease-out"
+          >
+            Contact
+          </span>
+        </RouterLink>
       </div>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div
+      v-if="isMenuOpen"
+      class="md:hidden bg-gradient-to-r from-cyan-500 to-blue-600 text-white p-4"
+    >
+      <RouterLink
+        to="/"
+        class="block px-4 py-2 rounded-md hover:bg-cyan-700 transition duration-300 ease-in-out"
+      >
+        Home
+      </RouterLink>
+      <RouterLink
+        to="/add-book"
+        class="block px-4 py-2 rounded-md hover:bg-cyan-700 transition duration-300 ease-in-out"
+      >
+        Add New Book
+      </RouterLink>
+      <RouterLink
+        to="/about"
+        class="block px-4 py-2 rounded-md hover:bg-cyan-700 transition duration-300 ease-in-out"
+      >
+        About
+      </RouterLink>
+      <RouterLink
+        to="/contact"
+        class="block px-4 py-2 rounded-md hover:bg-cyan-700 transition duration-300 ease-in-out"
+      >
+        Contact
+      </RouterLink>
     </div>
   </nav>
 
-  <!--Hero section-->>
+  <!--Hero section-->
   <section class="relative bg-gray-100 py-20 overflow-hidden">
     <!-- Background Decorative Shapes -->
     <div
