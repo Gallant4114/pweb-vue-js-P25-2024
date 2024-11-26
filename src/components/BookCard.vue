@@ -38,7 +38,7 @@ export default {
   <div class="border border-black rounded-xl px-6 pt-6 pb-8">
     <img
       src="https://placehold.co/300x200"
-      alt="Wajib Pake Typescript hehe"
+      alt="up gan"
       class="rounded-xl mb-4 w-full"
     />
     <h3 class="text-xl font-bold text-left">
