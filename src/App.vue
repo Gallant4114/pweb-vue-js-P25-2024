@@ -90,7 +90,7 @@ export default defineComponent({
     </div>
   </nav>
 
-  <!--Hero section-->>
+    <!--Hero section-->>
     <section class="relative bg-gray-100 py-20 overflow-hidden">
     <!-- Background Decorative Shapes -->
     <div class="absolute top-0 left-0 w-96 h-96 bg-blue-300 rounded-full opacity-30 -z-10 blur-3xl"></div>
