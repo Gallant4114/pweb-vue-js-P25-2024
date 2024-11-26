@@ -13,14 +13,14 @@ export default defineComponent({
           role: "CEO, Example Co.",
           testimonial:
             "This is an amazing platform! Highly recommend it to everyone.",
-          image: "https://via.placeholder.com/50",
+          image: "https://cdn.discordapp.com/attachments/1181924022208974961/1310932987017166938/pic8.png?ex=674704fc&is=6745b37c&hm=9eab9748e4672062bd3a7c519d64f58ce29bf6dd84bd4693be566e9bc20f7711&",
         },
         {
           name: "Mas Amba",
           role: "CTO, Another Co.",
           testimonial:
             "The features are incredibly well-designed. Great experience overall.",
-          image: "https://via.placeholder.com/50",
+          image: "https://cdn.discordapp.com/attachments/1181924022208974961/1310932987390590996/pic7.png?ex=674704fc&is=6745b37c&hm=2bc1d9669abd2d1c9a3bd402b8ac4f24f92f02ce7d08b217c6952b7bfd0c0625&",
         },
       ],
       features: [
@@ -60,6 +60,7 @@ export default defineComponent({
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
       <!-- Logo -->
       <div class="flex items-center space-x-4">
+        <img src="/img/logo.png" alt="logo" class="w-10 h-10 object-contain">
         <h1 class="text-2xl font-bold tracking-wide">Ngawi BookStore</h1>
       </div>
 
@@ -192,30 +193,7 @@ export default defineComponent({
       <p class="text-gray-700 mb-6 text-lg md:text-xl">
         Explore thousands of books, curated for every reader.
       </p>
-      <!-- Buttons 
-        <div class="flex justify-center gap-10 space-x-4">
-          <RouterLink
-            to="/signup"
-            class="bg-blue-600 text-white py-3 px-8 rounded-full shadow-lg transform transition-all duration-500 ease-in-out hover:bg-blue-800 hover:scale-110 hover:ring-4 hover:ring-blue-500 hover:ring-opacity-50 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50"
-          >
-            Get Started
-          </RouterLink>
-          <RouterLink
-            to="/learn-more"
-            class="bg-gray-300 text-gray-800 py-3 px-8 rounded-full shadow-lg transform transition-all duration-500 ease-in-out hover:bg-gray-400 hover:scale-110 hover:ring-4 hover:ring-gray-500 hover:ring-opacity-50 focus:outline-none focus:ring-4 focus:ring-gray-500 focus:ring-opacity-50"
-          >
-            Learn More
-          </RouterLink>
-        </div> -->
     </div>
-    <!-- Illustration
-      <div class="mt-10">
-        <img
-          src="https://via.placeholder.com/500x300"
-          alt="Books Illustration"
-          class="mx-auto rounded-lg shadow-lg"
-        />
-      </div> -->
   </section>
 
   <!--About Us Section-->
@@ -306,7 +284,7 @@ export default defineComponent({
         <div
           v-for="testimonial in testimonials"
           :key="testimonial.name"
-          class="p-6 border rounded shadow bg-white hover:bg-blue-50 transition-colors duration-300"
+          class="p-6 border rounded-2xl shadow bg-white hover:bg-blue-50 transition-colors duration-300"
         >
           <div class="flex items-center mb-4">
             <img
