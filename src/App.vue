@@ -205,26 +205,28 @@ export default defineComponent({
   <!--Testimonial Section-->
   <section class="bg-blue-50 py-20">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">What Our Customers Say</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div
-            v-for="testimonial in testimonials"
-            :key="testimonial.name"
-            class="p-6 border rounded shadow bg-white hover:bg-blue-50 transition-colors duration-300"
-          >
-            <div class="flex items-center mb-4">
-              <img
-                :src="testimonial.image"
-                alt="`Photo of ${testimonial.name}`"
-                class="w-12 h-12 rounded-full mr-4"
-              />
-              <div>
-                <h4 class="font-semibold">{{ testimonial.name }}</h4>
-                <p class="text-gray-600 text-sm">{{ testimonial.role }}</p>
-              </div>
+      <h2 class="text-3xl font-bold text-center mb-12">
+        What Our Customers Say
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div
+          v-for="testimonial in testimonials"
+          :key="testimonial.name"
+          class="p-6 border rounded shadow bg-white hover:bg-blue-50 transition-colors duration-300"
+        >
+          <div class="flex items-center mb-4">
+            <img
+              :src="testimonial.image"
+              alt="`Photo of ${testimonial.name}`"
+              class="w-12 h-12 rounded-full mr-4"
+            />
+            <div>
+              <h4 class="font-semibold">{{ testimonial.name }}</h4>
+              <p class="text-gray-600 text-sm">{{ testimonial.role }}</p>
             </div>
           </div>
-          </div>
+        </div>
+      </div>
     </div>
   </section>
 

@@ -40,22 +40,37 @@ export default {
 </script>
 
 <template>
-  <main class="mt-10 mx-8 pb-24">
-    <h1 class="font-bold text-3xl text-center">
-      This Is Ngawi Bookstore Dashboard
+  <main class="mt-10 mx-auto pb-24 max-w-7xl">
+    <h1
+      class="font-bold text-4xl text-center text-gray-800 border-b-4 border-blue-500 inline-block pb-2"
+    >
+      Welcome to Ngawi Bookstore Dashboard
     </h1>
-    <div class="flex flex-wrap justify-center gap-4 mt-10">
+    <div class="flex flex-wrap justify-center gap-6 mt-12">
+      <!-- Book Cards -->
       <BookCard
         v-if="bookData.length"
         v-for="book in bookData"
         :key="book._id"
         :book="book"
-        class="w-full sm:w-full md:w-2/6 lg:w-1/4"
+        class="w-full sm:w-5/12 md:w-1/3 lg:w-1/4 bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105"
       />
-      <h1 class="font-bold text-3xl text-center w-full" v-else-if="fetchError">
-        Failed to load book data
+
+      <!-- Error Message -->
+      <h1
+        class="font-bold text-2xl text-center text-red-500 w-full mt-12"
+        v-else-if="fetchError"
+      >
+        Failed to load book data 😔
       </h1>
-      <h1 class="font-bold text-3xl text-center w-full" v-else>Loading...</h1>
+
+      <!-- Loading Message -->
+      <h1
+        class="font-semibold text-2xl text-center text-gray-600 w-full mt-12 animate-pulse"
+        v-else
+      >
+        Loading book data... 📚
+      </h1>
     </div>
   </main>
 </template>
