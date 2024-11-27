@@ -40,36 +40,39 @@ export default {
 </script>
 
 <template>
-  <main class="mt-10 mx-auto pb-24 max-w-7xl">
+  <main class="mt-12 mx-auto pb-24 max-w-7xl">
+    <!-- Dashboard Header -->
     <h1
-      class="font-bold text-4xl text-center text-gray-800 border-b-4 border-blue-500 inline-block pb-2"
+      class="font-extrabold text-4xl text-center text-gray-800 border-b-4 border-blue-600 inline-block pb-2"
     >
-      Welcome to Ngawi Bookstore Dashboard
+      📚 Ngawi Bookstore Dashboard
     </h1>
-    <div class="flex flex-wrap justify-center gap-6 mt-12">
+
+    <!-- Book Cards Container -->
+    <div class="flex flex-wrap justify-center gap-8 mt-14">
       <!-- Book Cards -->
       <BookCard
         v-if="bookData.length"
         v-for="book in bookData"
         :key="book._id"
         :book="book"
-        class="w-full sm:w-5/12 md:w-1/3 lg:w-1/4 bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105"
+        class="w-full sm:w-5/12 md:w-1/3 lg:w-1/4 bg-gradient-to-r from-blue-50 to-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transform transition-all hover:scale-105 duration-300"
       />
 
       <!-- Error Message -->
       <h1
-        class="font-bold text-2xl text-center text-red-500 w-full mt-12"
+        class="font-bold text-2xl text-center text-red-600 w-full mt-12 bg-red-50 p-4 rounded-lg shadow-md"
         v-else-if="fetchError"
       >
-        Failed to load book data 😔
+        🚫 Failed to load book data 😔
       </h1>
 
       <!-- Loading Message -->
       <h1
-        class="font-semibold text-2xl text-center text-gray-600 w-full mt-12 animate-pulse"
+        class="font-semibold text-2xl text-center text-gray-500 w-full mt-12 animate-pulse"
         v-else
       >
-        Loading book data... 📚
+        🔄 Loading book data... Please wait! 📚
       </h1>
     </div>
   </main>

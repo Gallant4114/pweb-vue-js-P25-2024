@@ -35,29 +35,48 @@ export default {
 </script>
 
 <template>
-  <div class="border border-black rounded-xl px-6 pt-6 pb-8">
+  <div
+    class="border border-gray-300 rounded-xl p-6 bg-gradient-to-b from-white to-gray-50 shadow-lg hover:shadow-xl transition-shadow duration-300"
+  >
+    <!-- Book Cover -->
     <img
       src="https://placehold.co/300x200"
-      alt="up gan"
-      class="rounded-xl mb-4 w-full"
+      alt="Book Cover"
+      class="rounded-lg mb-4 w-full h-48 object-cover shadow-md"
     />
-    <h3 class="text-xl font-bold text-left">
-      {{ book.title }} | {{ book.author }}
+
+    <!-- Book Title and Author -->
+    <h3 class="text-lg font-extrabold text-gray-800 truncate">
+      {{ book.title }}
+      <span class="text-blue-500 font-medium">| {{ book.author }}</span>
     </h3>
-    <hr class="my-2 border border-black" />
-    <h5 class="text-md font-medium text-left">
-      Published: {{ book.publishedDate }} by {{ book.publisher }}
+
+    <!-- Divider -->
+    <hr class="my-3 border-t border-gray-300" />
+
+    <!-- Published Details -->
+    <h5 class="text-sm text-gray-600">
+      <span class="font-semibold">Published:</span> {{ book.publishedDate }} by
+      <span class="font-semibold">{{ book.publisher }}</span>
     </h5>
-    <h5 class="text-md font-medium text-left">
-      Category: {{ book.tags.join(", ") }}
+
+    <!-- Category -->
+    <h5 class="text-sm text-gray-600 mt-2">
+      <span class="font-semibold">Category:</span> {{ book.tags.join(", ") }}
     </h5>
-    <h5 class="text-md font-medium text-left">
-      Quantity: {{ book.qty }} of {{ book.initialQty }} books
+
+    <!-- Quantity -->
+    <h5 class="text-sm text-gray-600 mt-2">
+      <span class="font-semibold">Quantity:</span>
+      {{ book.qty }} of {{ book.initialQty }} books
     </h5>
+
+    <!-- Read More Button -->
     <RouterLink
       :to="getReadMoreLink(book._id)"
-      class="px-4 text-white py-2 bg-blue-400 font-semibold rounded-xl inline-block mt-2"
-      >Read More</RouterLink
+      class="block text-center mt-4 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-all duration-300"
     >
+      Read More
+    </RouterLink>
   </div>
 </template>

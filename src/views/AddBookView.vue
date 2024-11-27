@@ -88,7 +88,7 @@ export default defineComponent({
           v-model="title"
           id="title"
           type="text"
-          placeholder="Tintin di Tibet"
+          placeholder="Kisah Agus Resing"
           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
           required
         />
@@ -103,7 +103,7 @@ export default defineComponent({
           v-model="author"
           id="author"
           type="text"
-          placeholder="Hergé"
+          placeholder="Yanto Balap"
           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
           required
         />
@@ -138,7 +138,7 @@ export default defineComponent({
           v-model="publisher"
           id="publisher"
           type="text"
-          placeholder="Gramedia"
+          placeholder="Amazon"
           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
           required
         />
@@ -155,7 +155,7 @@ export default defineComponent({
         <textarea
           v-model="description"
           id="description"
-          placeholder="Kisah petualangan Tintin di Tibet"
+          placeholder="Sejarah Agus Resing"
           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300 resize-none"
           required
         ></textarea>
@@ -225,7 +225,7 @@ export default defineComponent({
           v-model="tags"
           id="tags"
           type="text"
-          placeholder="Adventure, Fiction, Mystery"
+          placeholder="Masakan, Balapan, Petualangan"
           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
           required
         />
