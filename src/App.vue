@@ -55,6 +55,12 @@ export default defineComponent({
 </script>
 
 <template>
+  <head>
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  </head>
   <!--Navbar berkelas-->
   <nav class="sticky top-0 bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg z-50">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -174,19 +180,18 @@ export default defineComponent({
   </nav>
 
   <!--Hero section-->
-  <section class="relative bg-gray-100 py-20 overflow-hidden">
-    <!-- Background Decorative Shapes -->
-    <div
-      class="absolute top-0 left-0 w-96 h-96 bg-blue-300 rounded-full opacity-30 -z-10 blur-3xl"
-    ></div>
-    <div
-      class="absolute bottom-0 right-0 w-72 h-72 bg-yellow-300 rounded-full opacity-30 -z-10 blur-3xl"
-    ></div>
+  <section class="relative bg-gray-100 py-20 overflow-hidden flex items-center justify-center min-h-screen">
+      <!-- Background -->
+      <div
+        class="absolute top-0 left-0 w-96 h-96 bg-blue-300 rounded-full opacity-30 -z-10 blur-3xl">
+      </div>
+      <div
+        class="absolute bottom-0 right-0 w-72 h-72 bg-yellow-300 rounded-full opacity-30 -z-10 blur-3xl">
+      </div>
     <div class="container mx-auto px-4 text-center">
       <!-- Main Title -->
       <h1
-        class="text-4xl md:text-6xl font-extrabold mb-4 text-blue-700 leading-tight"
-      >
+        class="text-4xl md:text-6xl font-extrabold mb-4 text-blue-700 leading-tight">
         Discover the World of Knowledge
       </h1>
       <!-- Subtitle -->
@@ -199,8 +204,7 @@ export default defineComponent({
   <!--About Us Section-->
   <section class="py-20 bg-gray-50">
     <div
-      class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8"
-    >
+      class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8">
       <!-- Gambar -->
       <div class="flex-1">
         <img
@@ -280,73 +284,121 @@ export default defineComponent({
       <h2 class="text-3xl font-bold text-center mb-12">
         What Our Customers Say
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div
-          v-for="testimonial in testimonials"
-          :key="testimonial.name"
-          class="p-6 border rounded-2xl shadow bg-white hover:bg-blue-50 transition-colors duration-300"
-        >
-          <div class="flex items-center mb-4">
-            <img
-              :src="testimonial.image"
-              alt="`Photo of ${testimonial.name}`"
-              class="w-12 h-12 rounded-full mr-4"
-            />
-            <div>
-              <h4 class="font-semibold">{{ testimonial.name }}</h4>
-              <p class="text-gray-600 text-sm">{{ testimonial.role }}</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div
+            v-for="testimonial in testimonials"
+            :key="testimonial.name"
+            class="p-6 border rounded-2xl shadow bg-white transition-transform duration-300 hover:shadow-2xl hover:-translate-y-1 hover:scale-105"
+           >
+            <div class="relative flex item-center mb-6">
+              <!--Animated img-->
+                <div class="relative overflow-hidden rounded-full w-16 h-16">
+                    <img
+                      :src="testimonial.image"
+                      alt="`Photo of ${testimonial.name}`"
+                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6"
+                    />
+                      <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-blue-300 transition-colors duration-500">
+                      </div>
+                </div>
+                <div class="ml-4">
+                    <h4 class="font-semibold group-hover:text-blue-700 transition-colors duration-300">{{ testimonial.name }}
+                      {{ testimonial.name }}
+                    </h4>
+                  <p class="text-gray-600 text-sm">{{ testimonial.role }}</p>
+                </div>
             </div>
           </div>
         </div>
-      </div>
     </div>
-  </section>
+  </section> 
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-10">
+  <footer class="bg-gray-900 text-gray-100 py-12">
     <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <!-- About Us -->
         <div>
-          <h4 class="text-lg font-bold mb-2">About Us</h4>
-          <p class="text-gray-400">
-            We are committed to providing the best library experience.
+          <h4 class="text-lg font-bold mb-3 uppercase text-cyan-400">About Us</h4>
+          <p class="text-gray-400 leading-relaxed">
+            We are committed to providing the best library experience with a wide range of curated books.
           </p>
         </div>
+
+        <!-- Quick Links -->
         <div>
-          <h4 class="text-lg font-bold mb-2">Quick Links</h4>
-          <ul>
+          <h4 class="text-lg font-bold mb-3 uppercase text-cyan-400">Quick Links</h4>
+          <ul class="space-y-2">
             <li>
-              <RouterLink to="/privacy" class="hover:underline"
+              <RouterLink to="/privacy" class="hover:text-cyan-300 transition duration-700"
                 >Privacy Policy</RouterLink
               >
             </li>
             <li>
-              <RouterLink to="/terms" class="hover:underline"
+              <RouterLink to="/terms" class="hover:text-cyan-300 transition duration-700"
                 >Terms of Service</RouterLink
               >
             </li>
             <li>
-              <RouterLink to="/faq" class="hover:underline">FAQ</RouterLink>
+              <RouterLink to="/faq" class="hover:text-cyan-300 transition duration-700"
+                >FAQ</RouterLink
+              >
             </li>
           </ul>
         </div>
+
+        <!-- Contact-->
         <div>
-          <h4 class="text-lg font-bold mb-2">Follow Us</h4>
+          <h4 class="text-lg font-bold mb-3 uppercase text-cyan-400">Contact</h4>
+          <p class="text-gray-400">Email: support@ngawibookstore.com</p>
+          <p class="text-gray-400">Phone: +62 123 456 789</p>
+          <p class="text-gray-400">Address: Ngawi, East Java, Indonesia</p>
+          <a 
+            href="https://maps.app.goo.gl/qvbigRxRahkabgZz9"
+            target="_blank"
+            class="text-cyan-500 hover:text-cyan-700 transition-colors duration-300"
+            rel="noopener noreferrer"
+          >
+            <i class="fas fa-map-maker alt"></i>View on Google Maps
+          </a>
+        </div>
+
+        <!-- Follow-->
+        <div>
+          <h4 class="text-lg font-bold mb-3 uppercase text-cyan-400">Follow Us</h4>
           <div class="flex space-x-4">
-            <a href="#" class="hover:text-blue-400">
+            <a
+              href="#"
+              class="hover:text-blue-500 transition duration-300 text-2xl"
+            >
               <i class="fab fa-facebook"></i>
             </a>
-            <a href="#" class="hover:text-blue-400">
+            <a
+              href="#"
+              class="hover:text-blue-400 transition duration-300 text-2xl"
+            >
               <i class="fab fa-twitter"></i>
             </a>
-            <a href="#" class="hover:text-blue-400">
+            <a
+              href="#"
+              class="hover:text-pink-500 transition duration-300 text-2xl"
+            >
               <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.youtube.com/shorts/SXHMnicI6Pg"
+              class="hover:text-red-500 transition duration-300 text-2xl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-youtube"></i>
             </a>
           </div>
         </div>
       </div>
-      <div class="text-center mt-8 text-gray-400">
-        &copy; 2024 Book App PWEB A. All rights reserved.
+
+      <div class="mt-10 border-t border-gray-700 pt-6 text-center text-gray-500 text-sm">
+        &copy; 2024 Ngawi BookStore. All rights reserved.
       </div>
     </div>
   </footer>

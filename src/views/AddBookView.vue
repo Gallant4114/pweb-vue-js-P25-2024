@@ -77,7 +77,7 @@ export default defineComponent({
     </h1>
     <form
       @submit.prevent="addBook"
-      class="max-w-3xl mx-auto bg-gradient-to-r from-blue-100 to-blue-50 p-10 rounded-lg shadow-2xl"
+      class="max-w-3xl rounded-2xl mx-auto bg-gradient-to-r from-blue-100 to-blue-50 p-10 shadow-2xl"
     >
       <!-- Title -->
       <div class="mb-6">
@@ -276,7 +276,7 @@ export default defineComponent({
       <div class="flex justify-center">
         <button
           type="submit"
-          class="px-6 py-3 text-white font-semibold bg-blue-500 rounded-lg shadow-lg hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
+          class="bg-blue-600 text-white py-3 px-8 rounded-full shadow-lg transform transition-all duration-500 ease-in-out hover:bg-blue-800 hover:scale-110 hover:ring-4 hover:ring-blue-500 hover:ring-opacity-50 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50"
         >
           Add Book
         </button>
