@@ -8,6 +8,7 @@ interface BookObject {
   title: string;
   author: string;
   tags: string[];
+  coverImage: string;
   publishedDate: string;
   initialQty: number;
   qty: number;

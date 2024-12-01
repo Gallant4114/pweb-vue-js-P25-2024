@@ -9,6 +9,7 @@ export interface BookObject {
   title: string;
   author: string;
   publishedDate: string;
+  coverImage: string;
   tags: string[];
   initialQty: number;
   qty: number;
@@ -40,7 +41,7 @@ export default {
   >
     <!-- Book Cover -->
     <img
-      src="https://placehold.co/300x200"
+      :src="book.coverImage"
       alt="Book Cover"
       class="rounded-lg mb-4 w-full h-48 object-cover shadow-md"
     />
